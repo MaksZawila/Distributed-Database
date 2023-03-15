@@ -37,28 +37,34 @@ The client is launched from the command:
 
 Available operations:  
 	
-* set-value <key>:<value>  
-		Success returns: OK  
-		Failure returns: Error  
+* set-value \<key>:\<value>  
+Success returns: OK  
+Failure returns: Error
 
-* get-value <key>
-    Success returns: <value>
+
+* get-value \<key>  
+    Success returns: \<value>  
     Failure returns: Error
 
-* find-key <key>
-    Success returns: <ip>:<port>
+
+* find-key \<key>  
+    Success returns: \<ip>:\<port>  
     Failure returns: Error
 
-* get-max
-    Success returns: <key>:<value>
 
-* get-min
-    Success returns: <key>:<value>
+* get-max  
+    Success returns: \<key>:\<value>
 
-* new-record <key>:<value>
-    Success returns: <key>:<value>
-			
-* terminate
+
+* get-min  
+    Success returns: \<key>:\<value>
+
+
+* new-record \<key>:\<value>  
+    Success returns: \<key>:\<value>
+
+
+* terminate  
     Success returns: OK
 
 The server is launched from the command:
@@ -95,7 +101,7 @@ However if the opertion does require communication with other nodes, then the se
 spreads this operation to all "neighbours", and waits for all the responses.
 Message that is sent to the nodes looks like this:
 
-* id \<id> [ -blacklist \<ip>:\<port> ] -operation <operation>
+    id <id> [ -blacklist <ip>:<port> ] -operation <operation>
 
 Where `<id>` is related to the port of the client and `-blacklist <ip>:<port>` is
 an array of nodes that were already asked, to prevent the query from looping around
