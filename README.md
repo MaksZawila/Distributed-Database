@@ -123,4 +123,4 @@ If the server has received a response from all fo the nodes, then the final resp
 is sent to the client.
 
 ## Copyright
-Vibefuze is released under the MIT license. See [LICENSE](https://github.com/MaksZawila/Distributed-Database/LICENSE) for details.
+Distributed Database is released under the MIT license. See [LICENSE](https://github.com/MaksZawila/Distributed-Database/LICENSE) for details.
