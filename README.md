@@ -1,33 +1,34 @@
 # Distributed Database
 
 ## About the project:  
-    The project is an implementation of a distributed database in Java 1.8.  
-	Nodes communicate with each other using the UDP protocol.  
-	Client-Server communication is based on TCP protocol.  
-	The project is multi-threaded, which means that it is possible to communicate  
-	with multiple clients and servers at the same time.  
+The project is an implementation of a distributed database in Java 1.8.  
+Nodes communicate with each other using the UDP protocol.  
+Client-Server communication is based on TCP protocol.  
+The project is multi-threaded, which means that it is possible to communicate  
+with multiple clients and servers at the same time.  
 
 ## Project Structure:
 	.
-    ├── compiled                # Directory for compiled files 
-    ├── src                     # Source files
-    ├── test-scripts            # Scripts used to test the project
+    ├── compiled              # Directory for compiled files 
+    ├── src                   # Source files
+    ├── test-scripts          # Scripts used to test the project
     ├── Compiler.bat
     ├── LICENSE
     └── README.md
 
 ## Classes:
 	.
-    ├── Client                  # Helper class used for client-server communication
-    ├── DatabaseClient          # Main class for a client used for sending requests
-    ├── DatabaseNode            # Main class for creating new node
-    ├── Datagram                # Helper class for communication between nodes
-    ├── Server                  # Node representation. All database operations are performed in this class
-    ├── Node                    # Model that represents <ip>:<port> of the node that the server is connected to
-    └── Record                  # Model that represents <key>:<value> which is stored by the server
+    ├── Client                # Helper class used for client-server communication
+    ├── DatabaseClient        # Main class for a client used for sending requests
+    ├── DatabaseNode          # Main class for creating new node
+    ├── Datagram              # Helper class for communication between nodes
+    ├── Server                # Node representation. All database operations are performed in this class
+    ├── Node                  # Model that represents <ip>:<port> of the node that the server is connected to
+    └── Record                # Model that represents <key>:<value> which is stored by the server
     
 ## Interfaces:
-	└── ReceiveListener         # Contains the method that is called when new datagram packet's been received
+	.
+	└── ReceiveListener       # Contains the method that is called when new datagram packet's been received
 
 ## How to run the program:
 The client is launched from the command:
@@ -73,7 +74,7 @@ Then it creates new Server object with 3 properties:
 
 * int port
 * Record record
-* Set<Node> nodes
+* Set\<Node> nodes
 
 Server constructor does all the necessary work to create a server to connect to.
 
@@ -94,9 +95,9 @@ However if the opertion does require communication with other nodes, then the se
 spreads this operation to all "neighbours", and waits for all the responses.
 Message that is sent to the nodes looks like this:
 
-* id <id> [ -blacklist <ip>:<port> ] -operation <operation>
+* id \<id> [ -blacklist \<ip>:\<port> ] -operation <operation>
 
-Where <id> is related to the port of the client and [ -blacklist <ip>:<port> ] is
+Where `<id>` is related to the port of the client and `-blacklist <ip>:<port>` is
 an array of nodes that were already asked, to prevent the query from looping around
 the nodes.
 		
@@ -110,7 +111,7 @@ was found.
 
 The nodes respond with a message that looks like this:
 
-* id <id> -response <answer>
+    id <id> -response <answer>
 		
 If the server has received a response from all fo the nodes, then the final response
 is sent to the client.
