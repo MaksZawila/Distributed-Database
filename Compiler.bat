@@ -1,0 +1,1 @@
+javac -d compiled src/*.java src/models/*.java src/interfaces/*.java
