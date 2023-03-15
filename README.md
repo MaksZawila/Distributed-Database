@@ -41,7 +41,7 @@ Available operations:
 |----------------------------|--------------------------------------------------------------------------------|-----------------|----------------|
 | `set-value <key>:<value>`  | Sets `<value>` for specific `<key>`                                            | `"OK"`          | "Error"        |
 | `get-value <key>`          | Returns `<value>` for specific `<key>`                                         | `<value>`       | "Error"        |
-| `find-key <key>`           | Searches for the address of the node, that has <br/>a record with the given `<key>` | `<ip>:<port>`   | "Error"        |
+| `find-key <key>`           | Searches for the address of the node, that has a record with the given `<key>` | `<ip>:<port>`   | "Error"        |
 | `get-max`                  | Searches for the largest value in the database                                 | `<key>:<value>` | None           |
 | `get-min`                  | Searches for the smallest value in the database                                | `<key>:<value>` | None           |
 | `new-record <key>:<value>` | Sets a new record `<key>:<value>` for the target server                        | `"OK"`          | None           |
