@@ -1,13 +1,13 @@
-## Distributed Database
+# Distributed Database
 
-#### About the project:  
+## About the project:  
     The project is an implementation of a distributed database in Java 1.8.  
 	Nodes communicate with each other using the UDP protocol.  
 	Client-Server communication is based on TCP protocol.  
 	The project is multi-threaded, which means that it is possible to communicate  
 	with multiple clients and servers at the same time.  
----
-#### Project Structure:
+
+## Project Structure:
 	.
     ├── compiled                # Directory for compiled files 
     ├── src                     # Source files
@@ -16,8 +16,7 @@
     ├── LICENSE
     └── README.md
 
----
-#### Classes:
+## Classes:
 	.
     ├── Client                  # Helper class used for client-server communication
     ├── DatabaseClient          # Main class for a client used for sending requests
@@ -27,12 +26,10 @@
     ├── Node                    # Model that represents <ip>:<port> of the node that the server is connected to
     └── Record                  # Model that represents <key>:<value> which is stored by the server
     
----
-#### Interfaces:
+## Interfaces:
 	└── ReceiveListener         # Contains the method that is called when new datagram packet's been received
 
----
-#### How to run the program:
+## How to run the program:
 The client is launched from the command:
 
 	$ java DatabaseClient -gateway <ip>:<port> -operation <operation>
@@ -66,12 +63,11 @@ Available operations:
 The server is launched from the command:
 
 	$ java DatabaseNode -tcpport <port> -record <key>:<value> [ -connect <ip>:<port> ]
----
-#### Installation:
+
+## Installation:
 Go to the "compiled" folder and run "Compiler.bat" script to compile the project
 
----
-#### How it works:
+## How it works:
 When starting the server, DatabaseNode class takes care of every flag that has been passed.
 Then it creates new Server object with 3 properties:
 
@@ -119,5 +115,5 @@ The nodes respond with a message that looks like this:
 If the server has received a response from all fo the nodes, then the final response
 is sent to the client.
 
-#### Copyright
+## Copyright
 Vibefuze is released under the MIT license. See [LICENSE](https://github.com/MaksZawila/Distributed-Database/LICENSE) for details.
